@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS chat_history (
+  id BIGSERIAL PRIMARY KEY,
+  chat_id TEXT NOT NULL,         -- ID o número de WhatsApp para identificar la conversación
+  sender TEXT NOT NULL,          -- "user" para mensajes de usuario o "bot" para respuestas
+  message TEXT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT now()
+);
